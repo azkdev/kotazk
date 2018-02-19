@@ -10,7 +10,7 @@ import processing.core.PImage
  */
 class Kotazk: PApplet() {
 
-    
+    lateinit var hero: Hero
 
     /**
      * Initialize settings.
@@ -27,6 +27,7 @@ class Kotazk: PApplet() {
     override fun setup() {
         frameRate(FR)
         background(BG)
+        hero = Hero()
     }
 
     /**
@@ -35,18 +36,19 @@ class Kotazk: PApplet() {
      */
     override fun draw() {
         background(BG)
+        hero.draw()
     }
 
 
     open inner class Character(
-            var x: Float = CW * .5F,
+            var x: Float = CW * .5F - HR * .5F,
             var y: Float = CH * .5F,
             var r: Float = HR
     )
 
     inner class Hero(
-            var texture: PImage = loadImage(HT)
-    ): Character(y = CH - 50F) {
+            var texture: PImage = requestImage(HT)
+    ): Character(y = CH - 150F) {
 
         fun draw() {
             image(texture, x, y, r, r)
