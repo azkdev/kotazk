@@ -7,7 +7,7 @@ val CW: Int = 600
 /**
  * Canvas height.
  */
-val CH: Int = 600
+val CH: Int = 800
 /**
  * Canvas background color.
  */
@@ -20,8 +20,10 @@ val FR: Float = 90F
 
 /**
  * Hero radius.
- * All the heroes will have ellipse form.
+ * We'll chose only square testures for our models.
  */
-val HR: Float = 50F
-
-val HT: String = "/textures/hero.png"
+val HR: Float = 100F
+/**
+ * Hero texture.
+ */
+val HT: String = "textures/rocket.png"
