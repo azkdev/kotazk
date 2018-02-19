@@ -1,31 +1,65 @@
 package com.azkdev.kotazk
 
 import processing.core.PApplet
-import processing.core.PConstants
+import processing.core.PImage
 
+/**
+ * @author "azkdev"
+ * Kotlin and Processing development.
+ * This class will contain all the game classes.
+ */
 class Kotazk: PApplet() {
 
+    
+
+    /**
+     * Initialize settings.
+     * Setting canvas width and height.
+     */
     override fun settings() {
-        size(600, 600) // Constant need to be used.
+        size(CW, CH)
     }
 
+    /**
+     * Setup function.
+     * Here we'll instantiate models, variables.
+     */
     override fun setup() {
-        frameRate(90F) // Constant need to be used.
-        background(50) // Constant need to be used.
+        frameRate(FR)
+        background(BG)
     }
 
+    /**
+     * Draw function.
+     * Infinite loop for drawing content.
+     */
     override fun draw() {
-        background(50) // Constant need to be used.
-        textSize(30F) // Init text size.
-        textAlign(PConstants.CENTER, PConstants.CENTER) // Align text to center and underline.
-        stroke(255) // Stroke color.
-        strokeWeight(3F) // Stroke weight.
-        line(0F, 325F, 600F, 325F) // Line x1 = 0, x2 = 600.
-        text("Initial stage", 300F, 300F) // Text and positioning.
+        background(BG)
+    }
+
+
+    open inner class Character(
+            var x: Float = CW * .5F,
+            var y: Float = CH * .5F,
+            var r: Float = HR
+    )
+
+    inner class Hero(
+            var texture: PImage = loadImage(HT)
+    ): Character(y = CH - 50F) {
+
+        fun draw() {
+            image(texture, x, y, r, r)
+        }
+
     }
 
 }
 
+/**
+ * Main function.
+ * Entry point for our game.
+ */
 fun main(args: Array<String>) {
     PApplet.main("com.azkdev.kotazk.Kotazk")
 }
