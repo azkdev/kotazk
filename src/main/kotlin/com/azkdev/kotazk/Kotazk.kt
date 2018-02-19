@@ -57,7 +57,7 @@ class Kotazk: PApplet() {
      */
     inner class Hero(
             private var texture: PImage = requestImage(HT)
-    ): Character(y = CH - 150F) {
+    ): Character(y = CH - 150F - HR * .5F) {
 
         fun draw() {
             image(texture, x, y, r, r)
@@ -69,12 +69,12 @@ class Kotazk: PApplet() {
      * Axis class.
      */
     inner class Axis(
-            var x: Float = CW * .5F,
-            var y: Float = CH * 1F,
-            var w: Float = CW * 1.3F,
-            var h: Float = 300F,
-            var a1: Float = PConstants.PI + PConstants.QUARTER_PI,
-            var a2: Float = PConstants.TWO_PI - PConstants.QUARTER_PI
+            private var x: Float = CW * .5F,
+            private var y: Float = CH * 1F,
+            private var w: Float = CW * 1.3F,
+            private var h: Float = 300F,
+            private var a1: Float = PConstants.PI + PConstants.QUARTER_PI,
+            private var a2: Float = PConstants.TWO_PI - PConstants.QUARTER_PI
     ) {
 
         fun draw() {
