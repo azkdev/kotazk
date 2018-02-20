@@ -39,15 +39,20 @@ class Kotazk: PApplet() {
         hero.draw()
     }
 
-
+    /**
+     * Parent class for characters (hero, enemy).
+     */
     open inner class Character(
             var x: Float = CW * .5F - HR * .5F,
             var y: Float = CH * .5F,
             var r: Float = HR
     )
 
+    /**
+     * Our hero.
+     */
     inner class Hero(
-            var texture: PImage = requestImage(HT)
+            private var texture: PImage = requestImage(HT)
     ): Character(y = CH - 150F) {
 
         fun draw() {
