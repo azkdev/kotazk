@@ -22,8 +22,13 @@ val FR: Float = 90F
  * Hero radius.
  * We'll chose only square testures for our models.
  */
-val HR: Float = 100F
+val HR: Float = 60F
 /**
  * Hero texture.
  */
 val HT: String = "textures/rocket.png"
+
+/**
+ * Axis color. (white)
+ */
+val AC: Int = 255
